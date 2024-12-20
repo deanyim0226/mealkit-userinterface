@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [ //put all the components used in this application
@@ -18,7 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule, //ngModel for two-way binding
-    HttpClientModule, //HTTP request
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

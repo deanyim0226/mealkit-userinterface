@@ -1,0 +1,61 @@
+
+
+header {
+    background: black;
+    border-bottom: 1px solid yellow;
+    padding: 0;
+}
+
+a{
+    color: white;
+}
+
+a:hover{
+    background: black;
+    color: yellow;
+}
+
+.container{
+    padding-left: 1em;
+    padding-right: 1em;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul{
+    list-style-type: none;
+    margin: 0;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 1em;
+    font-size: 1.2em;
+}
+
+
+.menu {
+    display: none; /* Hide the menu initially */
+    position: absolute; /* Position it relative to its parent */
+    right: 0; /* Align it to the right side of the parent */
+    top: 100%; /* Drop it down below the toggle button */
+    background-color: #fff; /* Ensure it has a visible background */
+    border: 1px solid #ccc; /* Add a border for visibility */
+    width: 200px; /* Define a width for the menu */
+}
+
+.toggle-btn {
+    cursor: pointer; /* Change cursor to pointer when hovering over the button */
+}
+
+.menu li {
+    padding: 10px; /* Add padding for menu items */
+    text-align: left; /* Align text to the left */
+}
+/*
+position: fixed  -> keeps the navigation menu in a fixed position relative to the viewpoint
+it won't move when the user scrolls
+
+*/
+
