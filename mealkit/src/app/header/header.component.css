@@ -1,13 +1,24 @@
-
-
 header {
-    background: black;
+    position: sticky;
     border-bottom: 1px solid yellow;
     padding: 0;
+    background: black;
+    opacity: 0.9;
+}
+
+#icon{
+    color: white;
+    cursor: pointer;
+}
+
+#icon:hover{
+    background: black;
+    color: yellow;
 }
 
 a{
     color: white;
+    text-decoration: none;
 }
 
 a:hover{
@@ -15,47 +26,67 @@ a:hover{
     color: yellow;
 }
 
-.container{
-    padding-left: 1em;
-    padding-right: 1em;
-    margin: 0 auto;
+.container {
+    display: flex; /* Use flexbox to align elements */
+    justify-content: space-between; /*Spreads the child elements pushing them as far apart as possible  Space out brand and nav */
+    align-items: center; /* Center items vertically */
+ 
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
+nav {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
 }
 
-nav ul{
-    list-style-type: none;
-    margin: 0;
+.nav-ul {
+    display: flex; /* Display list items in a row */
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
 }
 
-nav ul li a {
-    display: inline-block;
-    padding: 1em;
-    font-size: 1.2em;
+nav ul li {
+    margin-right: 20px; /* Space between nav items */
+}
+
+.checkbtn{
+    display: block;
+}
+
+.menu{
+    position: fixed;
+    display: block;
+    width: 10em;
+    height: 30vh;
+    list-style-type: none; 
+    top: 5em;
+    right: -1000%;
+    text-align: right;
+    transition: all .5s;
+    
 }
 
 
-.menu {
-    display: none; /* Hide the menu initially */
-    position: absolute; /* Position it relative to its parent */
-    right: 0; /* Align it to the right side of the parent */
-    top: 100%; /* Drop it down below the toggle button */
-    background-color: #fff; /* Ensure it has a visible background */
-    border: 1px solid #ccc; /* Add a border for visibility */
-    width: 200px; /* Define a width for the menu */
+#check:checked ~ ul{
+    right: 0;
 }
 
-.toggle-btn {
-    cursor: pointer; /* Change cursor to pointer when hovering over the button */
-}
 
-.menu li {
-    padding: 10px; /* Add padding for menu items */
-    text-align: left; /* Align text to the left */
-}
 /*
 position: fixed  -> keeps the navigation menu in a fixed position relative to the viewpoint
 it won't move when the user scrolls
 
 */
 
+@media (min-width: 768px) {
+    .container {
+        margin-right: 4.6em;
+        margin-left: 4.6em;
+    }
+
+    .menu{
+        text-align: center;
+    }    
+
+}

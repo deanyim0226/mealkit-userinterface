@@ -6,13 +6,20 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { SignupPageComponent } from './pages/signup-page/signup-page.component';
 
 
 @NgModule({
   declarations: [ //put all the components used in this application
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+
+    LoginPageComponent,
+    HomePageComponent,
+    SignupPageComponent
   ],
   imports: [  //put all angular features used in this application
     BrowserModule,
