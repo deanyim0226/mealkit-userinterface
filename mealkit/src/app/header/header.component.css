@@ -1,9 +1,9 @@
 header {
     position: sticky;
-    border-bottom: 1px solid yellow;
     padding: 0;
     background: black;
     opacity: 0.9;
+    order: 1;
 }
 
 #icon{
@@ -13,17 +13,17 @@ header {
 
 #icon:hover{
     background: black;
-    color: yellow;
+    color: #ffa500;
 }
 
 a{
-    color: white;
+    color: rgb(240, 55, 145); /* Example color for headings */
     text-decoration: none;
 }
 
 a:hover{
     background: black;
-    color: yellow;
+    color: #ffa500;
 }
 
 .container {
@@ -31,19 +31,19 @@ a:hover{
     justify-content: space-between; /*Spreads the child elements pushing them as far apart as possible  Space out brand and nav */
     align-items: center; /* Center items vertically */
  
-    margin-right: 1em;
-    margin-left: 1em;
 }
 
 nav {
     display: flex;
     align-items: center;
+    border-bottom: 1px solid #ffa500;
 }
 
-.nav-ul {
+.nav-unorderlist {
     display: flex; /* Display list items in a row */
     list-style-type: none; /* Remove bullet points */
     padding: 0;
+    padding-top: 1em;
 }
 
 nav ul li {
@@ -80,9 +80,9 @@ it won't move when the user scrolls
 */
 
 @media (min-width: 768px) {
-    .container {
-        margin-right: 4.6em;
-        margin-left: 4.6em;
+    .nav {
+        margin-right: 1em;
+        margin-left: 1em;
     }
 
     .menu{

@@ -9,6 +9,16 @@ import { FormsModule } from '@angular/forms';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { SignupPageComponent } from './pages/signup-page/signup-page.component';
+import { MealkitPageComponent } from './pages/mealkit-page/mealkit-page.component';
+import { DeliveryPageComponent } from './pages/delivery-page/delivery-page.component';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { AddFoodComponent } from './pages/admin-page/add-food/add-food.component';
+import { AddCategoryComponent } from './pages/admin-page/add-category/add-category.component';
+import { ViewFoodComponent } from './pages/admin-page/view-food/view-food.component';
+import { ViewAdminComponent } from './pages/admin-page/view-admin/view-admin.component';
+import { ViewUsersComponent } from './pages/admin-page/view-users/view-users.component';
+import { ViewOrdersComponent } from './pages/admin-page/view-orders/view-orders.component';
 
 
 @NgModule({
@@ -19,15 +29,25 @@ import { SignupPageComponent } from './pages/signup-page/signup-page.component';
 
     LoginPageComponent,
     HomePageComponent,
-    SignupPageComponent
+    SignupPageComponent,
+    MealkitPageComponent,
+    DeliveryPageComponent,
+
+    AdminPageComponent,
+    AddFoodComponent,
+    AddCategoryComponent,
+    ViewFoodComponent,
+    ViewAdminComponent,
+    ViewUsersComponent,
+    ViewOrdersComponent
   ],
   imports: [  //put all angular features used in this application
     BrowserModule,
     AppRoutingModule,
-    FormsModule, //ngModel for two-way binding
+    FormsModule //ngModel for two-way binding
    
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

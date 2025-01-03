@@ -1,1 +1,28 @@
-<p>signup-page works!</p>
+
+<body>
+    <div class="login-container">
+        <form>
+            
+            <div class="header">
+                <h2>Register</h2>
+                <p></p>
+            </div>
+            <div class="input-group">
+                <label for="username">Email:</label>
+                <input type="text" id="username" name="username" [(ngModel)]="registerObj.email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" [(ngModel)]="registerObj.password" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Re-Password:</label>
+                <input type="password" id="re_password" name="re_password" [(ngModel)]="registerObj.re_password"  required>
+            </div>
+            <button type="submit" (click)="register()">SignUp</button>
+
+        </form>
+    </div>
+</body>
+
+

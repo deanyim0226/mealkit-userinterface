@@ -1,0 +1,53 @@
+footer {
+    background-color: black;
+    border-top: 1px solid #ffa500;
+    color: #fff;
+    padding: 20px 0;
+    opacity: 0.9;
+    bottom: 0;
+}
+
+.container {
+
+    display: flex; /*Enables a flexible box layout which is a more efficient way to lay out, align, and distribute space among items in a container*/
+    justify-content: space-between; /*aligns the flex container's children (e.g., footer sections like about, links) with space distributed evenly between them*/
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 0 1em;  
+}
+
+h3 {
+    color: rgb(253, 52, 153); /* Example color for headings */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #ffa500;
+}
+
+.footer-about, .footer-links, .footer-contact, .footer-social {
+    flex: 1;
+    margin: 1px;
+}
+
+@media (max-width: 768px) {
+    footer .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-about, .footer-links, .footer-contact, .footer-social {
+        flex: none;
+        max-width: 300px;
+
+    }
+}

@@ -1,0 +1,70 @@
+<body>
+    <section>
+        <div class="container-fluid p-5 mt-5">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-header text-center ">
+                            <p class="fs-4">Add Category</p>
+                            <!-- Placeholder for Success or Error Message -->
+                            <p class="text-success fw-bold">Success message here</p>
+                            <p class="text-danger fw-bold">Error message here</p>
+                        </div>
+                        <div class="card-body">
+                            <form action="/admin/saveCategory" method="post" enctype="multipart/form-data">
+                                <div class="mb-3">
+                                    <label>Enter Category</label>
+                                    <input type="text" name="name" class="form-control" [(ngModel)]="categoryObj.name">
+                                </div>
+                                <button (click)="saveCategory()" class="btn btn-primary col-md-12 mt-2">Save</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header text-center fs-4">Category Details</div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Category</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Static example row -->
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Sample Category</td>
+
+                                        <td>
+                                            <a href="#" class="btn btn-primary btn-sm">Edit </a>
+                                            <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="row">
+                                <div class="col-md-4">Total Category: 5</div>
+                                <div class="col-md-6">
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination">
+                                            <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span> </a></li>
+                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span> </a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>

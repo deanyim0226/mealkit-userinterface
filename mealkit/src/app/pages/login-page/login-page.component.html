@@ -1,1 +1,21 @@
-<p>login-page works!</p>
+<body>
+    <div class="login-container">
+        <form>
+            
+            <div class="header">
+                <h2>Login</h2>
+                <p></p>
+            </div>
+            <div class="input-group">
+                <label for="username">Email:</label>
+                <input type="text" id="username" name="username" [(ngModel)]="logObj.email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" [(ngModel)]="logObj.password" required>
+            </div>
+            <button type="submit" (click)="login()">Login</button>
+            <p>Does not have an account? <a href="#" routerLink="/signup">Register</a></p>
+        </form>
+    </div>
+</body>

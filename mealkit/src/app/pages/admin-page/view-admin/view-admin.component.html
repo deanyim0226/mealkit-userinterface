@@ -1,0 +1,79 @@
+
+<div class="container-fluid mt-5 p-5">
+
+  
+    <!-- Search and Add New Button -->
+    <div class="card card-sh">
+        
+        <div class="card-header text-center">
+
+            <!-- Header Section -->
+            <div class="header-section">
+                <h2 class="text-center">Admin Management</h2>
+            </div>
+
+            <div class="search-add">
+                <div class="search-box">
+                  <i class="bi bi-search" id="search-icon"></i>
+                  <input
+                  type="text" 
+                  placeholder="Search by name or email" 
+        
+                  class="search-input"
+                  />
+                </div>
+              </div>
+        </div>
+    </div>
+
+    <!-- Employee Table -->
+    <table class="table"  >
+      <thead class="table-primary">
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Mobile-No</th>
+          <th>Address</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr  *ngFor="let user" >
+            <th>{{user.email}}</th>
+            <th>{{user.userStatus}}</th>
+            <th>{{user}}</th>
+            <th>{{user}}</th>
+            <th>{{user}}</th>
+            <th>
+                <ul class="action-list">
+                    <li><i data-bs-toggle="modal" data-bs-target="#myModal" id="update" class="bi bi-pencil-square fs-5"></i></li>
+                </ul>
+            </th>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+    
+    <!--Modal Employee Form-->
+    <div class="modal fade" id="myModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="myModalLabel">Employee Form</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="col">
+
+                </div>
+         
+            </div>
+            <div class="modal-footer">
+
+              <button  class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
