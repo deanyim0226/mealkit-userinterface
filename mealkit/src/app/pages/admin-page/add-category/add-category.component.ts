@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FoodService } from '../../../services/food/food.service';
+import { Category } from '../../../data/category-data';
 
 @Component({
   selector: 'app-add-category',
@@ -8,27 +9,51 @@ import { FoodService } from '../../../services/food/food.service';
   templateUrl: './add-category.component.html',
   styleUrl: './add-category.component.css'
 })
-export class AddCategoryComponent {
+export class AddCategoryComponent implements OnInit {
 
-  constructor(private foodService:FoodService){
-
-  }
+  categories:Category[] = [];
 
   categoryObj:any ={
     name:'',
   }
 
+  constructor(private foodService:FoodService){
+
+  }
+
+  ngOnInit(): void {
+
+    this.foodService.getAllCategory();
+
+    this.foodService.categories.subscribe((categoryList)=>{
+      this.categories = categoryList;
+    })
+  }
 
   saveCategory(){
     
-    this.foodService.uploadCategory(this.categoryObj).subscribe({
+    this.foodService.saveCategory(this.categoryObj).subscribe({
       next: data=>{
-        alert("successfully saved");
+        alert("successfully saved" + data);
       },
       error: error=>{
         alert("error");
       }
     })
+  }
+
+  deleteCategory(categoryId:number){
+    
+    alert("clicked")
+    this.foodService.deleteCategory(categoryId).subscribe({
+      next: data=>{
+        alert("successfully deleted" + data);
+      },
+      error: error=>{
+        alert("error");
+      }
+    })
+    
   }
 
 }

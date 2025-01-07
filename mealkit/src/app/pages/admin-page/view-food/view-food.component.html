@@ -33,16 +33,17 @@
           <th>Name</th>
           <th>Stock</th>
           <th>Rating</th>
+          <th>Service</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
-        <tr  *ngFor="let user" >
-            <th>{{user.email}}</th>
-            <th>{{user.userStatus}}</th>
-            <th>{{user}}</th>
-            <th>{{user}}</th>
-            <th>{{user}}</th>
+        <tr  *ngFor="let food of foods" >
+            <th>{{food.name}}</th>
+            <th>{{food.description}}</th>
+            <th>{{food.imageUrl}}</th>
+            <th>{{food.stock}}</th>
+            <th>{{food.service}}</th>
             <th>
                 <ul class="action-list">
 

@@ -1,3 +1,5 @@
+import { Category } from "./category-data";
+
 export enum Service{
     FOOD_SERVICE,
     MEALKIT_SERVICE
@@ -11,5 +13,6 @@ export interface Food{
     imageUrl:string,
     videoUrl:string,
     stock:number,
-    rating:number
+    rating:number,
+    category:Category
 }

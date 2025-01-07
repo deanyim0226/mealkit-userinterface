@@ -13,27 +13,22 @@
                         <div class="card-body">
                             <form action="/admin/saveProduct" method="post" enctype="multipart/form-data">
                                 <div class="mb-3">
-                                    <label>Enter Title</label>
-                                    <input type="text" name="title" class="form-control">
+                                    <label>Enter Food Name</label>
+                                    <input type="text" name="title" class="form-control" [(ngModel)]="foodObj.name">
                                 </div>
 
                                 <div class="mb-3">
-                                    <label>Enter Description</label>
-                                    <textarea rows="3" class="form-control" name="description"></textarea>
+                                    <label>Enter Food Description</label>
+                                    <textarea rows="3" class="form-control" name="description" [(ngModel)]="foodObj.description"></textarea>
                                 </div>
 
                                 <div class="mb-3">
                                     <label>Category</label>
-                                    <select class="form-control" name="category">
+                                    <select class="form-control" name="category" [(ngModel)]="foodObj.category_id">
                                         <option>--select--</option>
-                                        <option>Sample Category 1</option>
-                                        <option>Sample Category 2</option>
-                                    </select>
-                                </div>
+                                        <option *ngFor="let category of categoryList" [value]="category.category_id">{{category.name}}</option>
 
-                                <div class="mb-3">
-                                    <label>Enter Price</label>
-                                    <input type="number" name="price" class="form-control">
+                                    </select>
                                 </div>
 
                                 <div class="mb-3">
@@ -51,14 +46,14 @@
                                 <div class="row">
                                     <div class="mb-3 col">
                                         <label>Enter Stock</label>
-                                        <input type="text" name="stock" class="form-control">
+                                        <input type="text" name="stock" class="form-control" [(ngModel)]="foodObj.stock">
                                     </div>
                                     <div class="mb-3 col">
                                         <label>Upload Image</label>
-                                        <input type="file" name="file" class="form-control">
+                                        <input type="file" name="file" class="form-control" (change)="onFileSelected($event)">
                                     </div>
                                 </div>
-                                <button class="btn btn-primary col-md-12">Submit</button>
+                                <button (click)="saveFood()" class="btn btn-primary col-md-12">Submit</button>
                             </form>
                         </div>
                     </div>

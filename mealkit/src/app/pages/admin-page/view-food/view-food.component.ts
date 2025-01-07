@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FoodService } from '../../../services/food/food.service';
+import { Food } from '../../../data/food-data';
 
 @Component({
   selector: 'app-view-food',
@@ -10,12 +12,18 @@ import { Component, OnInit } from '@angular/core';
 export class ViewFoodComponent implements OnInit{
 
   searchTerm:string = '';
+  foods:Food[] = [];
   
-  constructor(){
+  constructor(private foodService:FoodService){
     
   }
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.foodService.getAllFood();
+
+    this.foodService.foods.subscribe((foodList) =>{
+      this.foods = foodList;
+    })
+
   }
 }
