@@ -1,9 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environment/environment';
 import { Category } from '../../data/category-data';
 import { BehaviorSubject, tap } from 'rxjs';
 import { Food } from '../../data/food-data';
+import { UserService } from '../user/user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,19 @@ export class FoodService {
 
   SpringBaseUrl:string = environment.springFoodServiceUrl;
    
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private userService:UserService) { }
+
+  deleteFood(foodId:number){
+
+    return this.http.delete(this.SpringBaseUrl + '/deleteFood/' + foodId).pipe(
+      tap(() =>{
+
+        const modifiedFoodList = this.foodSubject.value.filter((food)=> food.food_id !== foodId);
+        this.foodSubject.next(modifiedFoodList);
+
+      })
+    );
+  }
 
   saveFood(food:FormData){
 

@@ -26,4 +26,17 @@ export class ViewFoodComponent implements OnInit{
     })
 
   }
+
+
+  deleteFood(foodId:number){
+
+    this.foodService.deleteFood(foodId).subscribe({
+      next: (deletedFood) =>{
+        alert("successfully deleted " + deletedFood);
+      },
+      error: (error)=>{
+        alert("error while deleting food with Id: " + foodId);
+      }
+    })
+  }
 }

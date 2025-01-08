@@ -33,7 +33,7 @@
           <th>Name</th>
           <th>Stock</th>
           <th>Rating</th>
-          <th>Service</th>
+          <th>S</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -46,7 +46,7 @@
             <th>{{food.service}}</th>
             <th>
                 <ul class="action-list">
-
+                  <a (click)="deleteFood(food.food_id)" class="btn btn-danger btn-sm">Delete</a>
                 </ul>
             </th>
           </tr>

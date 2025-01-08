@@ -53,6 +53,8 @@ export class AddFoodComponent implements OnInit {
     formData.append('stock', this.foodObj.stock.toString()); // Ensure number is sent as string
 
     if (this.foodObj.file) {
+
+      alert("file" + this.foodObj.file);
         formData.append('file', this.foodObj.file);
     }
 
