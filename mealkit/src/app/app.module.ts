@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +19,7 @@ import { ViewFoodComponent } from './pages/admin-page/view-food/view-food.compon
 import { ViewAdminComponent } from './pages/admin-page/view-admin/view-admin.component';
 import { ViewUsersComponent } from './pages/admin-page/view-users/view-users.component';
 import { ViewOrdersComponent } from './pages/admin-page/view-orders/view-orders.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 
 @NgModule({
@@ -39,14 +40,17 @@ import { ViewOrdersComponent } from './pages/admin-page/view-orders/view-orders.
     ViewFoodComponent,
     ViewAdminComponent,
     ViewUsersComponent,
-    ViewOrdersComponent
+    ViewOrdersComponent,
+    CarouselComponent
+
   ],
   imports: [  //put all angular features used in this application
     BrowserModule,
     AppRoutingModule,
-    FormsModule //ngModel for two-way binding
-   
+    FormsModule, //ngModel for two-way binding
+    
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })
