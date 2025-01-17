@@ -37,7 +37,7 @@ export class FoodService {
 
     return this.http.post<Food>(this.SpringBaseUrl+'/saveFood', food).pipe(
       tap((savedFood) =>{
-
+        console.log(savedFood);
         const currentFoodList = this.foodSubject.value;
         this.foodSubject.next([...currentFoodList, savedFood]);
       })

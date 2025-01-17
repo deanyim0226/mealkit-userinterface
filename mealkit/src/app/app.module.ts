@@ -20,7 +20,7 @@ import { ViewAdminComponent } from './pages/admin-page/view-admin/view-admin.com
 import { ViewUsersComponent } from './pages/admin-page/view-users/view-users.component';
 import { ViewOrdersComponent } from './pages/admin-page/view-orders/view-orders.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
-
+import { BackgroundComponent } from './components/background/background.component';
 
 @NgModule({
   declarations: [ //put all the components used in this application
@@ -41,7 +41,9 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     ViewAdminComponent,
     ViewUsersComponent,
     ViewOrdersComponent,
-    CarouselComponent
+    CarouselComponent,
+    BackgroundComponent,
+
 
   ],
   imports: [  //put all angular features used in this application

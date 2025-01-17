@@ -60,7 +60,9 @@ export class AddFoodComponent implements OnInit {
 
     this.foodService.saveFood(formData).subscribe({
       next: data=>{
-        alert("successfully saved" + data);
+        alert("successfully saved" );
+
+        console.log(data);
       },
       error: error=>{
         alert("error");

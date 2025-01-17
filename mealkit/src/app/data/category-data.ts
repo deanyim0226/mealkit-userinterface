@@ -1,5 +1,8 @@
+import { Food } from "./food-data";
+
 export interface Category{
     category_id:number,
-    name:string
+    name:string,
+    foods:Food[]
 
 }

@@ -11,6 +11,7 @@ import { ViewOrdersComponent } from './pages/admin-page/view-orders/view-orders.
 import { AddCategoryComponent } from './pages/admin-page/add-category/add-category.component';
 import { AddFoodComponent } from './pages/admin-page/add-food/add-food.component';
 import { ViewFoodComponent } from './pages/admin-page/view-food/view-food.component';
+import { DeliveryPageComponent } from './pages/delivery-page/delivery-page.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'login', component: LoginPageComponent},
   {path: 'signup', component: SignupPageComponent},
   {path: 'mealkit', component: MealkitPageComponent},
+  {path: 'delivery', component: DeliveryPageComponent},
 
   {path: 'admin/dashboard', component: AdminPageComponent},
   {path: 'admin/dashboard/users', component: ViewUsersComponent},
